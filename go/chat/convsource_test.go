@@ -397,7 +397,7 @@ func TestReactions(t *testing.T) {
 	t.Logf("test +1 reaction")
 	reactionMsgID := sendReaction(":+1:")
 	expectedReactionMap := chat1.ReactionMap{
-		Reactions: map[string][]chat1.Reaction{
+		map[string][]chat1.Reaction{
 			":+1:": []chat1.Reaction{
 				chat1.Reaction{
 					Username:      u.Username,
