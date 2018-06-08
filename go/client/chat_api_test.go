@@ -49,7 +49,7 @@ func (h *handlerTracker) EditV1(context.Context, Call, io.Writer) error {
 }
 
 func (h *handlerTracker) ReactionV1(context.Context, Call, io.Writer) error {
-	h.reationV1++
+	h.reactionV1++
 	return nil
 }
 
@@ -361,7 +361,7 @@ var optTests = []optTest{
 		err:   ErrInvalidOptions{},
 	},
 	{
-		input: `{"id": 30, "method": "reaction "params":{"version": 1, "options": {"channel": {"name": "alice,bob"}, "message_id": 123, "message": {"body": ""}}}}`,
+		input: `{"id": 30, "method": "reaction", "params":{"version": 1, "options": {"channel": {"name": "alice,bob"}, "message_id": 123, "message": {"body": ""}}}}`,
 		err:   ErrInvalidOptions{},
 	},
 	{
