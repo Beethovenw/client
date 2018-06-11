@@ -24,7 +24,7 @@ const ParticipantTypeSBS = "sbs"
 
 func (s *Server) GetWalletAccountsLocal(ctx context.Context, sessionID int) (accts []stellar1.WalletAccountLocal, err error) {
 	ctx, err, fin := s.Preamble(ctx, preambleArg{
-		RPCName:       "GetWalletAccountsLocal",
+		RpcName:       "GetWalletAccountsLocal",
 		Err:           &err,
 		RequireWallet: true,
 	})
@@ -74,7 +74,7 @@ func (s *Server) GetWalletAccountsLocal(ctx context.Context, sessionID int) (acc
 
 func (s *Server) GetAccountAssetsLocal(ctx context.Context, arg stellar1.GetAccountAssetsLocalArg) (assets []stellar1.AccountAssetLocal, err error) {
 	ctx, err, fin := s.Preamble(ctx, preambleArg{
-		RPCName: "GetAccountAssetsLocal",
+		RpcName: "GetAccountAssetsLocal",
 		Err:     &err,
 	})
 	defer fin()
@@ -170,7 +170,7 @@ func (s *Server) GetAccountAssetsLocal(ctx context.Context, arg stellar1.GetAcco
 
 func (s *Server) GetDisplayCurrenciesLocal(ctx context.Context, sessionID int) (currencies []stellar1.CurrencyLocal, err error) {
 	ctx, err, fin := s.Preamble(ctx, preambleArg{
-		RPCName: "GetDisplayCurrenciesLocal",
+		RpcName: "GetDisplayCurrenciesLocal",
 		Err:     &err,
 	})
 	defer fin()
@@ -207,7 +207,7 @@ func (s *Server) GetDisplayCurrenciesLocal(ctx context.Context, sessionID int) (
 
 func (s *Server) GetUserSettingsLocal(ctx context.Context, sessionID int) (userSettings stellar1.UserSettings, err error) {
 	ctx, err, fin := s.Preamble(ctx, preambleArg{
-		RPCName:       "GetUserSettingsLocal",
+		RpcName:       "GetUserSettingsLocal",
 		Err:           &err,
 		RequireWallet: true,
 	})
@@ -225,7 +225,7 @@ func (s *Server) GetUserSettingsLocal(ctx context.Context, sessionID int) (userS
 
 func (s *Server) SetAcceptedDisclaimerLocal(ctx context.Context, sessionID int) (err error) {
 	ctx, err, fin := s.Preamble(ctx, preambleArg{
-		RPCName:       "SetAcceptedDisclaimerLocal",
+		RpcName:       "SetAcceptedDisclaimerLocal",
 		Err:           &err,
 		RequireWallet: true,
 	})
@@ -239,7 +239,7 @@ func (s *Server) SetAcceptedDisclaimerLocal(ctx context.Context, sessionID int) 
 
 func (s *Server) LinkNewWalletAccountLocal(ctx context.Context, arg stellar1.LinkNewWalletAccountLocalArg) (accountID stellar1.AccountID, err error) {
 	ctx, err, fin := s.Preamble(ctx, preambleArg{
-		RPCName:       "LinkNewWalletAccountLocal",
+		RpcName:       "LinkNewWalletAccountLocal",
 		Err:           &err,
 		RequireWallet: true,
 	})
@@ -263,7 +263,7 @@ func (s *Server) LinkNewWalletAccountLocal(ctx context.Context, arg stellar1.Lin
 
 func (s *Server) GetPaymentsLocal(ctx context.Context, arg stellar1.GetPaymentsLocalArg) (payments []stellar1.PaymentOrErrorLocal, err error) {
 	ctx, err, fin := s.Preamble(ctx, preambleArg{
-		RPCName:       "GetPaymentsLocal",
+		RpcName:       "GetPaymentsLocal",
 		Err:           &err,
 		RequireWallet: true,
 	})
@@ -528,7 +528,7 @@ func (a balanceList) nativeBalanceDescription() (string, error) {
 
 func (s *Server) ChangeWalletAccountNameLocal(ctx context.Context, arg stellar1.ChangeWalletAccountNameLocalArg) (err error) {
 	ctx, err, fin := s.Preamble(ctx, preambleArg{
-		RPCName:       "ChangeWalletAccountNameLocal",
+		RpcName:       "ChangeWalletAccountNameLocal",
 		Err:           &err,
 		RequireWallet: true,
 	})
@@ -542,7 +542,7 @@ func (s *Server) ChangeWalletAccountNameLocal(ctx context.Context, arg stellar1.
 
 func (s *Server) SetWalletAccountAsDefaultLocal(ctx context.Context, arg stellar1.SetWalletAccountAsDefaultLocalArg) (err error) {
 	ctx, err, fin := s.Preamble(ctx, preambleArg{
-		RPCName:       "SetWalletAccountAsDefaultLocal",
+		RpcName:       "SetWalletAccountAsDefaultLocal",
 		Err:           &err,
 		RequireWallet: true,
 	})
@@ -556,7 +556,7 @@ func (s *Server) SetWalletAccountAsDefaultLocal(ctx context.Context, arg stellar
 
 func (s *Server) DeleteWalletAccountLocal(ctx context.Context, arg stellar1.DeleteWalletAccountLocalArg) (err error) {
 	ctx, err, fin := s.Preamble(ctx, preambleArg{
-		RPCName:       "DeleteWalletAccountLocal",
+		RpcName:       "DeleteWalletAccountLocal",
 		Err:           &err,
 		RequireWallet: true,
 	})
@@ -574,7 +574,7 @@ func (s *Server) DeleteWalletAccountLocal(ctx context.Context, arg stellar1.Dele
 
 func (s *Server) ChangeDisplayCurrencyLocal(ctx context.Context, arg stellar1.ChangeDisplayCurrencyLocalArg) (err error) {
 	ctx, err, fin := s.Preamble(ctx, preambleArg{
-		RPCName:       "ChangeDisplayCurrencyLocal",
+		RpcName:       "ChangeDisplayCurrencyLocal",
 		Err:           &err,
 		RequireWallet: true,
 	})
@@ -598,7 +598,7 @@ func (s *Server) ChangeDisplayCurrencyLocal(ctx context.Context, arg stellar1.Ch
 
 func (s *Server) GetWalletAccountPublicKeyLocal(ctx context.Context, arg stellar1.GetWalletAccountPublicKeyLocalArg) (res string, err error) {
 	ctx, err, fin := s.Preamble(ctx, preambleArg{
-		RPCName:        "GetWalletAccountPublicKeyLocal",
+		RpcName:        "GetWalletAccountPublicKeyLocal",
 		Err:            &err,
 		AllowLoggedOut: true,
 	})
@@ -615,7 +615,7 @@ func (s *Server) GetWalletAccountPublicKeyLocal(ctx context.Context, arg stellar
 
 func (s *Server) GetWalletAccountSecretKeyLocal(ctx context.Context, arg stellar1.GetWalletAccountSecretKeyLocalArg) (res stellar1.SecretKey, err error) {
 	ctx, err, fin := s.Preamble(ctx, preambleArg{
-		RPCName:       "GetWalletAccountSecretKeyLocal",
+		RpcName:       "GetWalletAccountSecretKeyLocal",
 		Err:           &err,
 		RequireWallet: true,
 	})
